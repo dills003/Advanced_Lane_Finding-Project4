@@ -77,7 +77,7 @@ This resulted in the following source and destination points:
 | 1110, 720     | 1095, 720      |
 | 200, 720      | 185, 720        |
 
-I verified that my perspective transform was working as expected by drawing the `srcs` and `dsts` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
+I verified that my perspective transform was working as expected by drawing the `srcs` and `dsts` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image. This image also contains the polyfit lines found in the next step.
 
 ![alt text][image4]
 
@@ -89,7 +89,7 @@ To find the lane-line pixel and fit their positions, I used what we did in lectu
 
 ![alt text][image5]
 
-The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 4: Perspective Transform". Or in lines 338-356 of the FinalOutputMovie.py file. Most of the code was taken from the lectures and quizes.
+The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 5: Cuved Lines". Or in lines 108-183 of the FinalOutputMovie.py file. Most of the code was taken from the lectures and quizes.
 
 *5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.*
 
