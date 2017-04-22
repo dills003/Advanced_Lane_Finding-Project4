@@ -1,6 +1,6 @@
 ## **Advanced Lane Finding Project**
 
-Without all of the lectures and quizes in this module, I would not have stood a chance. I used a couple of different files to complete this project. I used the notebook titled, "P4ScratchPad.ipynb" to do my initial work and picture grabbing. I think that I like to prototype in the notebook and do the final code in a text editor (Visual Studio). My video output file is named, "FinalOutputMovie.py". I created a Lane class, that got way unruly and needs to be brokenout better in my video making(it just grew and grew). I also copied that into another notebook named, "FinalOutputMovie.ipynb".
+Without all of the lectures and quizes in this module, I would not have stood a chance. I used a couple of different files to complete this project. I used the notebook titled, "P4ScratchPad.ipynb" to do my initial work and picture grabbing. I think that I like to prototype in the notebook and do the final code in a text editor (Visual Studio). My video output file is named, "FinalOutputMovie.py". I created a Lane class for the video input, that got way unruly and needs to be broken out better, it just grew and grew. I also copied that into another notebook named, "FinalOutputMovie.ipynb".
 
 The goals / steps of this project are the following:
 
@@ -15,7 +15,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/undistort_output.png "Undistorted"
+[image1]: ./writeupPics
 [image2]: ./test_images/test1.jpg "Road Transformed"
 [image3]: ./examples/binary_combo_example.jpg "Binary Example"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
@@ -36,9 +36,9 @@ You're reading it!
 
 ####1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
-The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 1: Calibrate the Camera". Or in lines 247-292 of the 
+The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 1: Calibrate the Camera". Or in lines 247-292 of the FinalOutputMovie.py file. Most of the code was taken from the lectures and quizes. 
 
-I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  `imgpoints` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection.  
+I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  `imgpoints` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection. Most of the checkerboards were able to be read as a 9 x 6 board. I could calibrate using 17 of the 20 images. The other three could not be read as 9 x 6.
 
 I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result: 
 
