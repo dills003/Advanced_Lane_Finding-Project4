@@ -18,7 +18,7 @@ The goals / steps of this project are the following:
 [image1]: ./writeupPics/calibration.png "Calibration"
 [image2]: ./writeupPics/Undistorted.png "Undistorted"
 [image3]: ./writeupPics/BinaryResult.png "Binary Result"
-[image4]: ./examples/warped_straight_lines.jpg "Warp Example"
+[image4]: ./writeupPics/warped.png "Warped Example"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
 [video1]: ./project_video.mp4 "Video"
@@ -66,19 +66,18 @@ The code for this step is contained in the second code cell of the Juypter noteb
 
 *3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.*
 
-The code for my perspective transform includes a function called `warped()`. The `warped()` function takes as inputs an image (`img`). The function assumes that it is recieving a binary image. The function uses cv2.getPerspectiveTransform to obtain to calculate the perspective transform matrix used to seed the cv2.warpPerspective function. I also used the getPerspectiveTransform to obtain the inverse of the perpective transform matrix. I will use this later to 'unwarp' the image. I chose the hardcode the source and destination points need for the 
-
+The code for my perspective transform includes a function called `warped()`. The `warped()` function takes as inputs an image (`img`). The function assumes that it is recieving a binary image. The function uses cv2.getPerspectiveTransform to obtain to calculate the perspective transform matrix used to seed the cv2.warpPerspective function. I also used the getPerspectiveTransform to obtain the inverse of the perpective transform matrix. I will use this later to 'unwarp' the image. I chose the hardcode the source and destination points need for cgetPerspectiveTransform function by using MS Paint (didn't know it could be used for this until now).
 
 This resulted in the following source and destination points:
 
 | Source        | Destination   | 
 |:-------------:|:-------------:| 
-| 585, 460      | 320, 0        | 
-| 203, 720      | 320, 720      |
-| 1127, 720     | 960, 720      |
-| 695, 460      | 960, 0        |
+| 581, 460      | 185, 0        | 
+| 702, 460      | 1095, 0      |
+| 1110, 720     | 1095, 720      |
+| 200, 720      | 185, 720        |
 
-I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
+I verified that my perspective transform was working as expected by drawing the `srcs` and `dsts` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
 ![alt text][image4]
 
