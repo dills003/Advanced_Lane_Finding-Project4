@@ -17,7 +17,7 @@ The goals / steps of this project are the following:
 
 [image1]: ./writeupPics/calibration.png "Calibration"
 [image2]: ./writeupPics/Undistorted.png "Undistorted"
-[image3]: ./writeupPics/BinaryResult.png"Binary Resi;t"
+[image3]: ./writeupPics/BinaryResult.png "Binary Result"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
@@ -29,13 +29,13 @@ Here I will consider the rubric points individually and describe how I addressed
 ---
 # Writeup / README
 
-1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  
+*1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.*  
 
 You're reading it!
 
 # Camera Calibration
 
-1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
+*1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.*
 
 The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 1: Calibrate the Camera". Or in lines 247-292 of the FinalOutputMovie.py file. Most of the code was taken from the lectures and quizes. 
 
@@ -47,7 +47,7 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 # Pipeline (single images)
 
-1. Provide an example of a distortion-corrected image.
+*1. Provide an example of a distortion-corrected image.*
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
 
 ![alt text][image2]
@@ -56,14 +56,14 @@ The real heros are the people behind cv2. To undistort my image all I did was ta
 
 The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 2: Example of Distortion Corrected Image". Or in lines 296-302 of the FinalOutputMovie.py file. Most of the code was taken from the lectures and quizes.
 
-2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
+*2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.*
 I used a combination of color and gradient thresholds to generate a binary image. I used a combination of Sobel X and the S-channel from the HLS color model. I used these, because they worked in lecture/quizes and they looked good on my test image. Here's an example of my output for this step:
 
 ![alt text][image3]
 
-The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 2: Example of Distortion Corrected Image". Or in lines 296-302 of the FinalOutputMovie.py file. Most of the code was taken from the lectures and quizes.
+The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 3: Thresholding". Or in lines 304-336 of the FinalOutputMovie.py file. Most of the code was taken from the lectures and quizes.
 
-3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
+*3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.8
 
 The code for my perspective transform includes a function called `warper()`, which appears in lines 1 through 8 in the file `example.py` (output_images/examples/example.py) (or, for example, in the 3rd code cell of the IPython notebook).  The `warper()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
 
