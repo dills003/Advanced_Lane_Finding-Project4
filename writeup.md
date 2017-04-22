@@ -87,11 +87,13 @@ The code for this step is contained in the second code cell of the Juypter noteb
 
 To find the lane-line pixel and fit their positions, I used what we did in lecture and on the quizes. My function expects to hae a binary image input into it. I first created a histogram to find the most common points of the input image. I then used a sliding window to identify the non-zero pixels in the image and created a giant list. I then used numpy's polyfit to fit a polynomial fit nice line to to the found pixels. Below is what this step looks like:
 
-![alt text][image5]
+![alt text][image4]
 
 The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 5: Cuved Lines". Or in lines 108-183 of the FinalOutputMovie.py file. Most of the code was taken from the lectures and quizes.
 
 *5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.*
+
+To find the lane-line pixel and fit their positions, I used what we did in lecture and on the quizes. I first converted pixels space to real world meters.
 
 The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 5: Curved Lines". Or in lines 108-183 of the FinalOutputMovie.py file. Most of the code was taken from the lectures and quizes.
 
@@ -99,7 +101,7 @@ The code for this step is contained in the second code cell of the Juypter noteb
 
 I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
 
-![alt text][image6]
+![alt text][image5]
 
 ---
 
