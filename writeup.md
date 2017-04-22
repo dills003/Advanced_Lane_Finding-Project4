@@ -111,7 +111,9 @@ The code for this step is contained in the second code cell of the Juypter noteb
 
 *1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).*
 
-Here's a [link to my video result](./project_video.mp4)
+I took my prototype scratch pad and added a class and a moving average to it. This code is located in lines 22-246 & 45-76 of the FinalOutputMovie.py file.
+
+Here's a [link to my video result](./myVideo.mp4)
 
 ---
 
