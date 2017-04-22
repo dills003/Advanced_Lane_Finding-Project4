@@ -93,9 +93,9 @@ The code for this step is contained in the second code cell of the Juypter noteb
 
 *5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.*
 
-To find the lane-line pixel and fit their positions, I used what we did in lecture and on the quizes. I first converted pixels space to real world meters.
+To find the lane-line pixel and fit their positions, I used what we did in lecture and on the quizes. I first converted pixels space to real world meters. The approximate ratio was given to us. I then fit the left and right lane polynomials to x, y in real world space. That was followed by finding the radii of the curvature. To find the center of the lane, I assumed the lane center should always be in the middle of the image at pixel point 640. I then took where the left and right lane lines were found the lane width and added where the left line was versus where it should be. I then took the difference of perfect middle and where I found the middle to be.
 
-The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 5: Curved Lines". Or in lines 108-183 of the FinalOutputMovie.py file. Most of the code was taken from the lectures and quizes.
+The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 6: Find Lane Curvature and Center". Or in lines 156-221 of the FinalOutputMovie.py file. Most of the code was taken from the lectures and quizes.
 
 *6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.*
 
