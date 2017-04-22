@@ -15,8 +15,8 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./writeupPics
-[image2]: ./test_images/test1.jpg "Road Transformed"
+[image1]: ./writeupPics/calibration.png "Calibration"
+[image2]: ./writeupPics/Undistorgted.png "Undistorted"
 [image3]: ./examples/binary_combo_example.jpg "Binary Example"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
@@ -27,28 +27,34 @@ The goals / steps of this project are the following:
 ###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
 ---
-###Writeup / README
+# Writeup / README
 
-####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  
+1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  
 
 You're reading it!
-###Camera Calibration
 
-####1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
+# Camera Calibration
+
+1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
 The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 1: Calibrate the Camera". Or in lines 247-292 of the FinalOutputMovie.py file. Most of the code was taken from the lectures and quizes. 
 
-I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  `imgpoints` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection. Most of the checkerboards were able to be read as a 9 x 6 board. I could calibrate using 17 of the 20 images. The other three could not be read as 9 x 6.
+I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  `imgpoints` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection. Most of the checkerboards were able to be read as a 9 x 6 board. I could calibrate using 17 of the 20 images. The other three could not be read as 9 x 6. I figured 17/20 was good enough to return the values that I needed.
 
 I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result: 
 
 ![alt text][image1]
 
-###Pipeline (single images)
+# Pipeline (single images)
 
-####1. Provide an example of a distortion-corrected image.
+1. Provide an example of a distortion-corrected image.
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
 ![alt text][image2]
+
+The real heros are the people behind cv2. To undistort my image all I did was take the calibration matrix, distortion coefficients, and a test image and plugged them into cv2.undistort and I got back an undistorted image. 
+
+The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 2: Example of Distortion Corrected Image". Or in lines 296-302 of the FinalOutputMovie.py file. Most of the code was taken from the lectures and quizes.
+
 ####2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
 
