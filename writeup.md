@@ -16,15 +16,15 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./writeupPics/calibration.png "Calibration"
-[image2]: ./writeupPics/Undistorgted.png "Undistorted"
-[image3]: ./examples/binary_combo_example.jpg "Binary Example"
+[image2]: ./writeupPics/Undistorted.png "Undistorted"
+[image3]: ./writeupPics/BinaryResult.png"Binary Resi;t"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
 [video1]: ./project_video.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
-###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
+Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
 ---
 # Writeup / README
@@ -49,18 +49,21 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 1. Provide an example of a distortion-corrected image.
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
+
 ![alt text][image2]
 
 The real heros are the people behind cv2. To undistort my image all I did was take the calibration matrix, distortion coefficients, and a test image and plugged them into cv2.undistort and I got back an undistorted image. 
 
 The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 2: Example of Distortion Corrected Image". Or in lines 296-302 of the FinalOutputMovie.py file. Most of the code was taken from the lectures and quizes.
 
-####2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
-I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
+2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
+I used a combination of color and gradient thresholds to generate a binary image. I used a combination of Sobel X and the S-channel from the HLS color model. I used these, because they worked in lecture/quizes and they looked good on my test image. Here's an example of my output for this step:
 
 ![alt text][image3]
 
-####3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
+The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 2: Example of Distortion Corrected Image". Or in lines 296-302 of the FinalOutputMovie.py file. Most of the code was taken from the lectures and quizes.
+
+3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
 The code for my perspective transform includes a function called `warper()`, which appears in lines 1 through 8 in the file `example.py` (output_images/examples/example.py) (or, for example, in the 3rd code cell of the IPython notebook).  The `warper()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
 
