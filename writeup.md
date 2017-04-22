@@ -81,17 +81,19 @@ I verified that my perspective transform was working as expected by drawing the 
 
 ![alt text][image4]
 
-The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 3: Thresholding". Or in lines 304-336 of the FinalOutputMovie.py file. Most of the code was taken from the lectures and quizes.
+The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 4: Perspective Transform". Or in lines 338-356 of the FinalOutputMovie.py file. Most of the code was taken from the lectures and quizes.
 
-*4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?*
+*4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial.*
 
-Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
+To find the lane-line pixel and fit their positions, I used what we did in lecture and on the quizes. My function expects to hae a binary image input into it. I first created a histogram to find the most common points of the input image. I then used a sliding window to identify the non-zero pixels in the image and created a giant list. I then used numpy's polyfit to fit a polynomial fit nice line to to the found pixels. Below is what this step looks like:
 
 ![alt text][image5]
 
+The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 4: Perspective Transform". Or in lines 338-356 of the FinalOutputMovie.py file. Most of the code was taken from the lectures and quizes.
+
 *5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.*
 
-I did this in lines # through # in my code in `my_other_file.py`
+The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 5: Curved Lines". Or in lines 108-183 of the FinalOutputMovie.py file. Most of the code was taken from the lectures and quizes.
 
 *6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.*
 
