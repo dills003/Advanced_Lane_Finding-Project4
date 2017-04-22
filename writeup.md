@@ -19,7 +19,7 @@ The goals / steps of this project are the following:
 [image2]: ./writeupPics/Undistorted.png "Undistorted"
 [image3]: ./writeupPics/BinaryResult.png "Binary Result"
 [image4]: ./writeupPics/warped.png "Warped Example"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
+[image5]: ./writeupPics/FinalCompare.png "Final Compare"
 [image6]: ./examples/example_output.jpg "Output"
 [video1]: ./project_video.mp4 "Video"
 
@@ -99,7 +99,9 @@ The code for this step is contained in the second code cell of the Juypter noteb
 
 *6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.*
 
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
+I put all of the above steps together to output a final image that identified lane lines, curvature, and off-center.
+
+The code for this step is contained in the second code cell of the Juypter notebook(P4ScratchPad.ipynb) titled "Step 7: Back to the Real World". Or in lines 225-246 of the FinalOutputMovie.py file. Most of the code was taken from the lectures and quizes.s
 
 ![alt text][image5]
 
