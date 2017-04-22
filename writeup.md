@@ -119,7 +119,11 @@ Here's a [link to my video result](./myVideo.mp4)
 
 # Discussion
 
-####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+*1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust*
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+The project went quite well, simply because all of it was covered in detail during the lectures. If had to do this from scratch, I would have been in a world of hurt. The concepts all make perfect sense to me. The only small trouble I had was with not putting stuff in Git earlier. I had a jupyter notebook and its checkpoints get corrupted. It turned out to be good practice though, because I had to redo everything. The class I created in my video pipeline is ugly as well. I don't get to practice creating classes and the basic code structure in my current job, so I know I have to get better at that in my spare time.
+
+The project trouble I has was that my original video had random 'blips' where the lane finding jumped about at the bridge and in shade. To battle this I triedto use a simple reject if new fit is much differnet stategy, but didn't like the output. My next and final idea was to use simple moving average filter to smooth out the polyfit lines from frame to fram. My pipeline is also not very robust, because it fails the challenge videos miseraabley. I could look at using a different color spaces, filters, smoothers, etc.
+
+The biggest thing that I took away from this project is that machine vision is VERY finicky! A small change can ruin your setup. I work at a place where I implement about thirty manufacturing machines and we vision guys that produce about one inspection machine per year. I thought they were just milking it, but now I know better. I think there is great need for machine learning to get into the industrial/computer vision inspection machine creation.
 
